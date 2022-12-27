@@ -53,8 +53,7 @@ jobs:
           push: true
           tags: ${{ steps.meta-ghcr.outputs.tags }}
           labels: ${{ steps.meta-ghcr.outputs.labels }}
-          build-args:
-            - JQ_TAG=${{ steps.jq-tag.outputs.tag }}
+          build-args: JQ_TAG=${{ steps.jq-tag.outputs.tag }}
           platforms: ${{ env.PLATFORMS }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
